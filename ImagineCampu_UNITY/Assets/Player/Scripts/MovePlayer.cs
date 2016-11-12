@@ -29,4 +29,11 @@ public class MovePlayer : MonoBehaviour {
 		targetPosition = position;
 		hasTarget = true;
 	}
+
+	public void moveTo(Vector2 position, float ratio) {
+		Vector2 oldPos = transform.localPosition;
+		body.velocity = (position - oldPos)*ratio;
+		targetPosition = position;
+		hasTarget = true;
+	}
 }

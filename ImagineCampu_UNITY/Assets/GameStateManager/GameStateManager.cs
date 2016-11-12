@@ -5,6 +5,7 @@ public class GameStateManager : MonoBehaviour {
 	private static GameStateManager instance = null;
 
 	public bool chosePark = false;
+	public bool choseLie = false;
 
 
 	public static GameStateManager Instance {
@@ -33,5 +34,13 @@ public class GameStateManager : MonoBehaviour {
 
 	public bool getChosePark() {
 		return chosePark;
+	}
+
+	public void playerChoseLie(bool value) {
+		choseLie = value;
+	}
+
+	public bool getChoseLie() {
+		return choseLie;
 	}
 }
