@@ -20,7 +20,6 @@ public class MoveCar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (GameStateManager.Instance.chosePark + " " + secondSpot1 + " (" + (transform.localPosition.x > 20.22f) + " " + (transform.localPosition.y > -0.48) + ")");
 		if (!firstSpot && transform.localPosition.x > 15f) {
 			body.velocity = Vector2.zero;
 

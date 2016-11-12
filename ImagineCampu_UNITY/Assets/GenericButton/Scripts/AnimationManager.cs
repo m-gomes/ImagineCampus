@@ -7,6 +7,7 @@ using Fungus;
 public class AnimationManager : MonoBehaviour {
 	[SerializeField] private Flowchart flowchart;
 	[SerializeField] private string blockName;
+	[SerializeField] private AudioSource clickSound,selectSound;
 	private Animator anim;
 	private bool mouseOver = false;
 
@@ -20,6 +21,7 @@ public class AnimationManager : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			if (mouseOver) {
 				flowchart.ExecuteBlock (blockName);
+				clickSound.Play ();
 			}
 		}
 	}
@@ -27,6 +29,7 @@ public class AnimationManager : MonoBehaviour {
 	void OnMouseEnter() {
 		anim.SetBool ("mouseOver",true);
 		mouseOver = true;
+		selectSound.Play ();
 	}
 
 	void OnMouseExit() {
