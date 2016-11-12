@@ -30,4 +30,8 @@ public class GameStateManager : MonoBehaviour {
 	public void playerChosePark(bool value) {
 		chosePark = value;
 	}
+
+	public bool getChosePark() {
+		return chosePark;
+	}
 }
