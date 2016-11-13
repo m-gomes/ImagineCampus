@@ -9,6 +9,9 @@ public class MoveCar : MonoBehaviour {
 	[SerializeField] private Animator leftWheel;
 	[SerializeField] private Animator rightWheel;
 	[SerializeField] private GameObject choiceCanvas;
+	[SerializeField] private Flowchart sayprechoice;
+	[SerializeField] private string blockgame;
+
 	private bool firstSpot = false;
 	private bool secondSpot1 = false;
 	private bool secondSpot2 = false;
@@ -26,7 +29,8 @@ public class MoveCar : MonoBehaviour {
 			leftWheel.SetBool ("moving",false);
 			rightWheel.SetBool ("moving",false);
 
-			choiceCanvas.gameObject.SetActive (true);
+//			choiceCanvas.gameObject.SetActive (true);
+			sayprechoice.ExecuteBlock(blockgame);
 
 			firstSpot = true;
 		
@@ -37,7 +41,9 @@ public class MoveCar : MonoBehaviour {
 			leftWheel.SetBool ("moving",false);
 			rightWheel.SetBool ("moving",false);
 
-			choiceCanvas.gameObject.SetActive (true);
+
+			//choiceCanvas.gameObject.SetActive (true);
+//			sayprechoice.ExecuteBlock(blockgame);
 
 			secondSpot1 = true;
 		
@@ -47,7 +53,8 @@ public class MoveCar : MonoBehaviour {
 			leftWheel.SetBool ("moving",false);
 			rightWheel.SetBool ("moving",false);
 
-			choiceCanvas.gameObject.SetActive (true);
+//			choiceCanvas.gameObject.SetActive (true);
+//			sayprechoice.ExecuteBlock(blockgame);
 
 			secondSpot2 = true;
 		}
@@ -66,5 +73,9 @@ public class MoveCar : MonoBehaviour {
 
 		leftWheel.SetBool ("moving",true);
 		rightWheel.SetBool ("moving",true);
+	}
+
+	public void setPosition(Vector3 position) {
+		transform.localPosition = position;
 	}
 }
